@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
+app.use(cors())
+
 const PORT = process.env.PORT || 4000;
-process.env.NODE_ENV = 'production'
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('build'));
