@@ -3,7 +3,19 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-app.use(cors())
+// app.use(cors())
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Header",
+        "Origin, X-Requested-with, Content-Type, Accept, Authorization"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+    );
+    next();
+});
 
 const PORT = process.env.PORT || 4000;
 
