@@ -1,38 +1,169 @@
-.App {
+/* @import '~semantic-ui-css/semantic.min.css'; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, li{
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+.container{
+  margin: 0 2rem;
+}
+
+.root {
+  flex-grow: 1;
+} 
+
+.menuButton {
+  margin-right: 1rem;
+}
+
+.title {
+  flex-grow: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* post card */
+.posts-deck{
+  /* position: relative; */
+  /* width: 100%; */
+  text-align: center;
+} 
+
+.post-card{
+  position: relative;
+  padding: 5px;
+  background-color: rgb(218, 214, 219);
+  border: 2px solid beige;
+  border-radius: 1rem;
+  height: 20rem;
+}
+.ids{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+.post-card h2{
+  margin: 0rem 2rem;
+  text-align: start;
+}
+
+.post-card p{
+  margin: 0 2rem;
+  margin-top: 10px;
+  text-align: start;
+}
+
+.actions{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  bottom: 0;
+}
+
+.actions button{
+  width: 5rem;
+  padding: .7rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.actions button:hover{
+  cursor: pointer;
+}
+
+.actions .like{
+  background-color: green;
+  color: aliceblue;
+}
+
+.actions .dislike{
+  background-color: rgb(206, 12, 12);
+  color: aliceblue;
+}
+
+.actions .secondary{
+  background-color: rgb(129, 129, 129);
+  color: aliceblue;
+}
+
+.paginator{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.paginator p {
+  margin:  1rem 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.paginator p:hover {
+  cursor: pointer;
+}
+
+.paginator .disabled{
+  color: rgb(177, 180, 180);
+}
+.paginator .disabled:hover{
+  cursor: not-allowed;
+}
+
+/* Form */
+
+.form{
+  margin: 5rem;
+}
+
+.form h3{
+  text-align: center;
+}
+
+.create_form h3, .edit_form h3{
+  margin-top: 2rem;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 900px){
+  .posts-deck{
+    margin: 0 4rem;
   }
-  to {
-    transform: rotate(360deg);
+  .post-card{
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .post-card{
+    float: left;
+    width: 50%;
+  }
+}
+
+
+@media only screen and (max-width: 500px){
+  .container{
+    margin: 0;
+  }
+  .posts-deck{
+    margin: 0 .5rem;
+  }
+
+  .post-card{
+    height: auto;
+    margin: .5rem 0;
+  }
+  .actions{
+    position: relative;
   }
 }
