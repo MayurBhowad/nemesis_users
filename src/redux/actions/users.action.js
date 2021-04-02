@@ -5,7 +5,7 @@ export const getAllUsers = () => dispatch => {
     dispatch({ type: USER_LOADING });
     console.log('reach getAllUsers');
     let data = [];
-    axios.get('http://jsonplaceholder.typicode.com/users')
+    axios.get('https://jsonplaceholder.typicode.com/users')
         .then(ress => {
             ress.data.map(item => {
                 let newUser = {};
